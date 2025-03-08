@@ -6,15 +6,16 @@ use App\Models\AdminUser;
 use App\Models\IncomingLog;
 use App\Models\IncomingLogData;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class Test extends Controller
 {
     public function test_method(){
-        // AdminUser::create([
-        //     'name'=>'Test',
-        //     'email'=>'toprak@hotmail.com',
-        //     'password'=>'toprak'
-        // ]);
+        AdminUser::create([
+            'name'=>'Test',
+            'email'=>'toprak17@hotmail.com',
+            'password'=>Hash::make('toprak')
+        ]);
         $incoming_log_data_model = IncomingLogData::create([
             'payload'=>'{"source":"test","title":"test","word_count":1}',
             'inserted'=>'{"source":"test","title":"test","word_count":1}',
