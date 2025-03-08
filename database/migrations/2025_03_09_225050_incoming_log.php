@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('incoming_log'); // Tabloyu silme işlemi ekleniyor
+        Schema::dropIfExists('incoming_logs'); // Tabloyu silme işlemi ekleniyor
     }
 };
