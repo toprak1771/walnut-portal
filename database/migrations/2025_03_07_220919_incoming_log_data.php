@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('incoming_log_datas', function (Blueprint $table) {
             $table->id();
             $table->json('payload');
-            $table->json('inserted');
+            $table->json('inserted')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

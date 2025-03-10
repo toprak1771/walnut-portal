@@ -66,6 +66,21 @@ class AdminUserController extends Controller
         }
     }
 
+    public function get_user() {
+        $user = Auth::guard('admin')->user();
+        if(!$user) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Kullanıcı bulunamadı.'
+            ]);
+        }
+        return response()->json([
+            'status' => true,
+            'message' => 'Kullanıcı başarıyla bulundu.',
+            'data' => $user
+        ]);
+    }
+
     public function logout(){
         Auth::guard('admin')->logout();
         return response()->json([
