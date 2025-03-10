@@ -99,7 +99,10 @@ class CallbackController extends Controller
 
             $title = $resultData['title'];
 
-            return $resultData;
+            return response()->json([
+                'ok' => true,
+                'title' => $title,
+            ]);
         } catch (\Exception $e) {
             Log::error('Callback API Error', [
                 'message' => $e->getMessage(),
